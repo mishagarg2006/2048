@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>2048</title>
+  <title>Super 2048 · Mushroom Kingdom</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
@@ -17,9 +17,47 @@
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
+  <div class="kingdom-scenery" aria-hidden="true">
+    <div class="cloud cloud-one"></div>
+    <div class="cloud cloud-two"></div>
+    <div class="hill hill-one"></div>
+    <div class="hill hill-two"></div>
+    <div class="pipe pipe-left">
+      <svg class="mario-sprite" viewBox="0 0 16 20" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" focusable="false">
+        <path fill="#672f23" d="M4 1h7v1h2v2h1v5h-1v2h-2v1H5v-1H3V9H2V4h1V2h1zM3 12h10v1h1v4h-2v3H8v-2H7v2H3v-3H1v-3h2z"/>
+        <path fill="#ec3c2c" d="M4 1h7v1h2v2H2V3h2zM3 12h3v5H2v-3h1zM10 12h3v1h1v4h-4z"/>
+        <path fill="#ffcb8a" d="M6 5h6v1h2v3h-2v2H6v-1H4V8H3V6h3z"/>
+        <path fill="#733a22" d="M3 5h4v1H5v3H4V8H3zM6 6h1v3H6zM10 5h1v3h-1zM9 8h1v1h3v1H8V9h1z"/>
+        <path fill="#fff8e6" d="M8 1h2v2H8zM1 15h3v3H1zM12 15h3v3h-3z"/>
+        <path fill="#2875c4" d="M6 12h1v3h3v-3h1v4h1v3H9v-2H7v2H4v-3h2z"/>
+        <path fill="#ffdf4d" d="M6 15h1v1H6zM10 15h1v1h-1z"/>
+        <path fill="#733a22" d="M3 18h4v2H2v-1h1zM9 18h4v1h1v1H9z"/>
+      </svg>
+    </div>
+    <div class="pipe pipe-right"></div>
+    <svg class="koopa-sprite" viewBox="0 0 40 42" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" focusable="false">
+      <g class="koopa-wing">
+        <path fill="#53697c" d="M21 19V9h2V5h3V2h3v6h2V5h4v7h-2v5h-3v5h-7v-3z"/>
+        <path fill="#fffdf0" d="M23 18v-8h2V6h2V5h1v9h3V9h2v3h-2v5h-3v3h-5z"/>
+        <path fill="#c5e4ed" d="M25 12h2v6h-2zM28 16h3v2h-3z"/>
+      </g>
+      <path fill="#643921" d="M9 14h8v2h3v5h-1v2h3v-3h9v2h3v4h2v8h-3v3h-5v3h-8v-3h-3v-3h-3v-3H7v-2H4v-6h3v-7h2z"/>
+      <path fill="#f9c63f" d="M9 16h8v2h1v6h-4v2H6v-3h3zM10 26h7v5h-3v-2h-4zM17 30h5v5h-3v-2h-2z"/>
+      <path fill="#fffdf0" d="M10 16h3v5h-3zM15 17h2v4h-2z"/>
+      <path fill="#253649" d="M10 18h2v3h-2zM15 19h1v2h-1zM6 25h6v1H6z"/>
+      <path fill="#fff4cf" d="M17 25h5v-2h7v2h4v3h1v5h-3v2h-9v-2h-3v-3h-2z"/>
+      <path fill="#3a9d48" d="M22 22h7v2h3v4h2v4h-4v1h-7v-3h-3v-4h2z"/>
+      <path fill="#226437" d="M24 23h2v4h5v2h-6v3h-2v-4h-2v-2h3z"/>
+      <path fill="#f9c63f" d="M20 34h5v3h-2v1h-3zM29 34h3v3h-3z"/>
+      <path fill="#d9482d" d="M18 37h6v2h-1v1h-7v-2h2zM29 37h5v2h2v2h-8v-2h1z"/>
+      <path fill="#fff4cf" d="M16 40h7v1h-7zM28 41h8v1h-8z"/>
+    </svg>
+    <div class="brick-ground"></div>
+  </div>
   <div class="container">
+    <p class="world-label">Mushroom Kingdom <span>World 2–0–4–8</span></p>
     <div class="heading">
-      <h1 class="title">2048</h1>
+      <h1 class="title"><span class="super-title">SUPER</span>2048<span class="edition-title">MARIO EDITION</span></h1>
       <div class="scores-container">
         <div class="score-container">0</div>
         <div class="best-container">0</div>
@@ -27,7 +65,7 @@
     </div>
 
     <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+      <p class="game-intro">A little merge. A big adventure.<br>Power up to the <strong>2048 tile!</strong></p>
       <a class="restart-button">New Game</a>
     </div>
 
@@ -73,11 +111,11 @@
     </div>
 
     <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+      <strong class="important">Let's-a go!</strong> Use your <strong>arrow keys</strong> or <strong>swipe</strong> to move the tiles. Match two of the same number to <strong>power them up!</strong>
     </p>
     <hr>
     <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
+    A Mushroom Kingdom makeover of the classic <strong>2048</strong>. Reach the golden tile and keep the adventure going.
     </p>
     <hr>
     <p>
